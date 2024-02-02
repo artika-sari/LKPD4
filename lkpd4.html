@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lkpd4</title>
+</head>
+<body>
+    <script>
+    //nilai kompeten
+    let math = 82;
+        let PABP = 70;
+        let DPK = 77;
+        let mean = (math + PABP + DPK)/3;
+    
+        if(mean >= 80 && mean <= 100) {
+            grade= "A";
+        } else if (mean >= 75 && mean <80){
+            grade = "B";
+        } else if (mean >= 65 && mean <75){
+            grade = "C";
+        } else if (mean >= 45 && mean <65){
+            grade = "D";
+        } else if (mean >= 0 && mean <45){
+            grade = "E";
+        } else {
+            grade = "K";
+        }
+
+        console.log('rata-rata iqbal adalah:', mean)
+        console.log('jadi nilai iqbal adalah:', grade)
+
+    //     //kode pegawai
+        function cetakInfoPegawai(kodepegawai) {
+
+        var golongan = parseInt(kodepegawai.charAt(0));
+        var tanggal = parseInt(kodepegawai.substr(1,2));
+        var bulan = parseInt(kodepegawai.substr(3, 2));
+        var tahun = parseInt(kodepegawai.substr(5, 4));
+        var nomorurut =parseInt(kodepegawai.substr(9, 2));
+
+        var namabulan = [
+            "januarti", "februari", "maret",
+            "april", "mei", "juni", "juli", "agustus",
+            "september", "oktober", "november", "desember"
+        ];
+
+        var namabulanlahir = namabulan[bulan -1];
+
+        console.log("Nomor Golongan:" +golongan);
+        console.log("Tanggal Lahir:" +tanggal +"" +namabulanlahir +"" +tahun);
+        console.log("Nomor Urut:" +nomorurut +"");
+        }
+
+        var kodepegawai = "12310200705"
+        cetakInfoPegawai(kodepegawai)
+
+        //detik
+        function menghitung (dataJam, dataMenit, dataDetik) {
+
+        let totalDetik = dataJam * 3600 + dataMenit * 60 + dataDetik;
+        let hasilTotalDetik = totalDetik + 1;
+        let totalJam = Math.floor(hasilTotalDetik / 3600) %24  ;
+        let sisaDetik = hasilTotalDetik % 3600;
+        let totalMenit = Math.floor(sisaDetik / 60);
+        let second = sisaDetik % 60;
+
+        console.log(`${dataJam} jam ${dataMenit} Menit ${dataDetik} detik`);
+        console.log(`${totalJam} jam ${totalMenit} Menit ${totalDetik} detik`);
+        }
+
+        menghitung(2, 25, 11);
+    </script>
+</body>
+</html>
